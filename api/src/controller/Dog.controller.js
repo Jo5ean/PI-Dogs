@@ -31,14 +31,20 @@ const getDogs = async (req, res, next) => {
 
 const postDogs = async (req, res, next) => {
 //sacamos el estado local del body
-     const { dog } = req.body;
+     const { dog, tempIds } = req.body;
         if( dog ) {
             try{
                 let newDog = await Dog.create(dog);
-                if(newDog) res.json({message: "Añadiste una nueva raza!", data: newDog});
-                else res.json({message: "No se pudo añadir la raza"});
 
-                //hacer relaciones con los temperamentos (nos va a implicar enviar mas cosas desde el front)
+                //realizamos las relaciones con los temperamentos
+                let arr = [];
+                for (let i=0; i<tempIds.length; i++){
+                  arr[i] = await newDog.addTemp(tempIds[i]) //funcion creada por sequelize cuando hacemos los modelos
+                }
+
+
+                if(newDog && arr[0]) res.json({message: "Añadiste una nueva raza!", data: newDog});
+                else res.json({message: "No se pudo añadir la raza"});
 
             } catch (e) {
                 next(e);

@@ -39,5 +39,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-  });
+  },
+  {
+    timestamps: false, //CreatAd and UpdateAt los eliminamos
+  }
+  );
 };

@@ -20,8 +20,19 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
+
+const { Temp } = require ('./src/db.js')
+const { getTemps } = require ('./src/controller/Temp.controller')
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: true }).then(async () => { //async aca y la logica
+   
+  // //Logica
+  // let aux = await Temp.findAll();
+  // if(!aux.length){ 
+  //   // getTemps()
+  // }
+  //crear funcion que se llame (en el index, o helpers) que retorne otra funcion con 
+
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
