@@ -21,8 +21,8 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 
-const { Temp } = require ('./src/db.js')
-const { getTemps } = require ('./src/controller/Temp.controller')
+// const { Temp } = require ('./src/db.js')
+// const { getTemps } = require ('./src/controller/Temp.controller')
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => { //async aca y la logica
    
