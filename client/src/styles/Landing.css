@@ -1,0 +1,20 @@
+.landing{
+    background-image: url('https://i.gifer.com/PeP4.gif');
+}
+
+.button{
+    border-radius: 8px;
+    background-color: #b4ad94;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.5s;
+    top: 10%;
+    left: 50%;
+    position: absolute;
+}
