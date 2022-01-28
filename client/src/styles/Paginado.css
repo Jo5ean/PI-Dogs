@@ -1,0 +1,9 @@
+.paginado{
+    display: inline-block;
+    border : 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+}
+.paginado li{
+    display: inline;
+}
